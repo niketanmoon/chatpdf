@@ -31,3 +31,10 @@
 - Add image domain to next config
 - Added constants file to utils folder
 - Built the landing page
+
+### Creating Dashboard page
+
+- added dashboard routing
+- Added page.tsx
+- Added layout.tsx
+- Added clerk loaded inside layout so that the whole layout has user authenticated
