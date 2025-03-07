@@ -38,3 +38,23 @@
 - Added page.tsx
 - Added layout.tsx
 - Added clerk loaded inside layout so that the whole layout has user authenticated
+
+- created placeholder document and created a upload route
+- Added navigation using `useRouter` from `next/navigation`
+- Added a FileUploader component
+
+### React dropzone setup
+
+- `npm install --save react-dropzone`
+- From the installation page, add onDrop callback, isDragActive and getRootProps and getInputProps
+
+
+### Deploy landing page using vercel
+- `npm i -g vercel`
+- `vercel login`
+- check build before deploying `npm run build`
+- deploy to dev `vercel`
+- deploy to prod `vercel --prod`
+
+## Continue building the app
+### Setting up firebase storage and Firestore
