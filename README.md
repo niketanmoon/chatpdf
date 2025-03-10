@@ -48,8 +48,8 @@
 - `npm install --save react-dropzone`
 - From the installation page, add onDrop callback, isDragActive and getRootProps and getInputProps
 
-
 ### Deploy landing page using vercel
+
 - `npm i -g vercel`
 - `vercel login`
 - check build before deploying `npm run build`
@@ -57,4 +57,30 @@
 - deploy to prod `vercel --prod`
 
 ## Continue building the app
+
 ### Setting up firebase storage and Firestore
+
+- Create a project
+- Later, go to project settings and register web app
+- install firebase `npm i firebase`
+- Create a cloud firestore and cloud storage in build
+- Go to project settings and go to service accounts and generate key
+- Download the file and add it to root of the project - rename it to `service_key.json` - Add it to gitignore
+- Install firebase admin for server side
+
+- custom hook useUpload
+- install uuid `npm i uuid` also do `npm i -D @types/uuid`
+- installed daisyui `npm i -D daisyui@latest`
+- Upload file to storage
+- Save that file to database firestore
+- Add route to the dynamic files once we get dynamic url from uploaded file
+- Generating embeddings using pinecone embeddings with langchain
+- login to pinecone
+- install pinecone `npm i @pinecone-database/pinecone`
+
+- Install langchain, community and core openai `npm i langchain @langchain/community @langchain/core @langchain/openai @langchain/pinecone`
+- Get the api key from openai and add it to environment variable OPENAI_API_KEY
+- Install pdf-parse
+- Generate docs using langchain and store the embeddings to pinecone vectorstore
+- Create pdfview using react-pdf
+- Added buttons to navigate to next and previous page, zoom in and out
