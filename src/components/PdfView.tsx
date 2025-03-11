@@ -52,6 +52,7 @@ function PdfView({ url }: { url: string }) {
                 setPageNumber(pageNumber - 1);
               }
             }}
+            className="cursor-pointer"
           >
             Previous
           </Button>
@@ -70,6 +71,7 @@ function PdfView({ url }: { url: string }) {
                 }
               }
             }}
+            className="cursor-pointer"
           >
             Next
           </Button>
@@ -77,6 +79,7 @@ function PdfView({ url }: { url: string }) {
           <Button
             variant="outline"
             onClick={() => setRotation((rotation + 90) % 360)}
+            className="cursor-pointer"
           >
             <RotateCw />
           </Button>
@@ -87,6 +90,7 @@ function PdfView({ url }: { url: string }) {
             onClick={() => {
               setScale(scale * 1.2);
             }}
+            className="cursor-pointer"
           >
             <ZoomInIcon />
           </Button>
@@ -95,6 +99,7 @@ function PdfView({ url }: { url: string }) {
             variant="outline"
             disabled={scale <= 0.75}
             onClick={() => setScale(scale / 1.2)}
+            className="cursor-pointer"
           >
             <ZoomOutIcon />
           </Button>

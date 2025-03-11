@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { adminDb } from "../../../../../firebaseAdmin";
 import PdfView from "@/components/PdfView";
+import Chat from "@/components/Chat";
 
 const ChatToFilePage = async ({
   params,
@@ -25,7 +26,7 @@ const ChatToFilePage = async ({
       {/* Right */}
       <div className="col-span-5 lg:col-span-2 overflow-y-auto">
         {/* Chat */}
-        {/* <Chat id={id} /> */}
+        <Chat id={id} />
       </div>
 
       {/* Left */}

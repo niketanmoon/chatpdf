@@ -84,3 +84,9 @@
 - Generate docs using langchain and store the embeddings to pinecone vectorstore
 - Create pdfview using react-pdf
 - Added buttons to navigate to next and previous page, zoom in and out
+
+- Add input component from shadcn: `npx shadcn@latest add input`
+- install react firebase hooks
+- created chat and chatMessage component
+- Added langchain chat completion function to get the chat message from ai
+- Also added some styling to input
