@@ -101,3 +101,5 @@
 - Added base url for route
 - Handled pro and free tier functionalities for deleting the doc and using the chat system.
 - Added download icon and delete document functionality
+
+- Listening to stripe on local: `stripe listen --forward-to localhost:3000/webhook`
