@@ -29,11 +29,8 @@ export async function askQuestion(id: string, question: string) {
   //   Check membership limits for messages in a document
   const userRef = await adminDb.collection("users").doc(userId!).get();
 
-  console.log("DEBUG 2", userRef.data());
-
   //   check if user is on FREE plan and has asked more than the FREE number of questions
   if (!userRef.data()?.hasActiveMembership) {
-    console.log("Debug 3", userMessages.length, FREE_LIMIT);
     if (userMessages.length >= FREE_LIMIT) {
       return {
         success: false,
@@ -44,7 +41,6 @@ export async function askQuestion(id: string, question: string) {
 
   // check if user is on PRO plan and has asked more than 100 questions
   if (userRef.data()?.hasActiveMembership) {
-    console.log("Debug 4", userMessages.length, PRO_LIMIT);
     if (userMessages.length >= PRO_LIMIT) {
       return {
         success: false,

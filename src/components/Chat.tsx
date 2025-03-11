@@ -98,7 +98,7 @@ function Chat({ id }: { id: string }) {
       console.log("DEBUG", success, message);
 
       if (!success) {
-        toast(message);
+        toast.error(message);
 
         setMessages((prev) =>
           prev.slice(0, prev.length - 1).concat([

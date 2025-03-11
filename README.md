@@ -90,3 +90,14 @@
 - created chat and chatMessage component
 - Added langchain chat completion function to get the chat message from ai
 - Also added some styling to input
+- Styled the pricing page
+- Added useSubscription custom hook
+- Installed stripe `npm i @stripe/stripe-js`
+
+- created stripe webhook endpoint
+- Added stripe cli
+- Created stripe checkout session
+- Added stripe portal
+- Added base url for route
+- Handled pro and free tier functionalities for deleting the doc and using the chat system.
+- Added download icon and delete document functionality

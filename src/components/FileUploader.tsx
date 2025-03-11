@@ -11,24 +11,37 @@ import {
 import { useRouter } from "next/navigation";
 import useUpload from "@/hooks/useUpload";
 import { StatusText } from "@/utils/constant";
+import useSubscription from "@/hooks/useSubsription";
+import { toast } from "sonner";
 
 const FileUploader = () => {
   const router = useRouter();
   const { progress, status, fileId, handleUpload } = useUpload();
+  const { isOverFileLimit, filesLoading } = useSubscription();
   useEffect(() => {
     if (fileId) {
       router.push(`/dashboard/files/${fileId}`);
     }
   }, [fileId, router]);
-  const onDrop = useCallback(async (acceptedFiles: File[]) => {
-    // Do something with the files
-    const file = acceptedFiles[0];
-    if (file) {
-      await handleUpload(file);
-    } else {
-      // do nothing toast
-    }
-  }, []);
+  const onDrop = useCallback(
+    async (acceptedFiles: File[]) => {
+      // Do something with the files
+      const file = acceptedFiles[0];
+      if (file) {
+        if (!isOverFileLimit && !filesLoading) {
+          await handleUpload(file);
+        } else {
+          toast.message("Free Plan File Limit Reached", {
+            description:
+              "You have reached the maximum number of files allowed for your account. Please upgrade to add more documents.",
+          });
+        }
+      } else {
+        // do nothing toast
+      }
+    },
+    [handleUpload, isOverFileLimit, filesLoading, toast]
+  );
 
   const statusIcons: {
     [key in StatusText]: JSX.Element;
