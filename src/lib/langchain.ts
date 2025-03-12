@@ -9,7 +9,6 @@ import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retr
 import { HumanMessage, AIMessage } from "@langchain/core/messages";
 import pineconeClient from "./pinecone";
 import { PineconeStore } from "@langchain/pinecone";
-import { PineconeConflictError } from "@pinecone-database/pinecone/dist/errors";
 import { Index, RecordMetadata } from "@pinecone-database/pinecone";
 import { adminDb } from "../../firebaseAdmin";
 import { auth } from "@clerk/nextjs/server";
@@ -156,9 +155,9 @@ export async function generateEmbeddingsInPineconeVectorStore(docId: string) {
 }
 
 const generateLangchainCompletion = async (docId: string, question: string) => {
-  let pineconeVectorStore;
-
-  pineconeVectorStore = await generateEmbeddingsInPineconeVectorStore(docId);
+  const pineconeVectorStore = await generateEmbeddingsInPineconeVectorStore(
+    docId
+  );
   if (!pineconeVectorStore) {
     throw new Error("Pinecone vector store not found");
   }
