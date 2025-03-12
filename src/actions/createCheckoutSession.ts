@@ -1,6 +1,6 @@
 "use server";
 
-import { UserDetails } from "@/app/upgrade/page";
+import { UserDetails } from "@/app/dashboard/upgrade/page";
 import { adminDb } from "../../firebaseAdmin";
 import getBaseUrl from "@/lib/getBaseUrl";
 import stripe from "@/lib/stripe";

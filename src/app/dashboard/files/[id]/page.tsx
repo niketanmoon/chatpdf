@@ -22,7 +22,7 @@ const ChatToFilePage = async ({
   const url = ref.data()?.downloadUrl;
 
   return (
-    <div className="grid lg:grid-cols-5 h-screen overflow-hidden">
+    <div className="grid lg:grid-cols-5 overflow-hidden">
       {/* Right */}
       <div className="col-span-5 lg:col-span-2 overflow-y-auto">
         {/* Chat */}

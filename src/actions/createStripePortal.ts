@@ -16,6 +16,7 @@ export async function createStripePortal() {
 
   //   get customer ID from firebase
   const user = await adminDb.collection("users").doc(userId).get();
+  
   const stripeCustomerId = user.data()?.stripeCustomerId;
 
   if (!stripeCustomerId) {

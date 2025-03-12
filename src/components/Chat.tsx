@@ -144,7 +144,6 @@ function Chat({ id }: { id: string }) {
           </div>
         )}
       </div>
-
       <form
         onSubmit={handleSubmit}
         className="flex sticky bottom-0 space-x-2 p-5 bg-indigo-600/75"

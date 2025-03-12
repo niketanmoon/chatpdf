@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { features } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
+import AppScreenshot from "../../public/images/chatpdfbackground.png";
 
 export default function Home() {
   return (
@@ -41,7 +42,8 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <Image
               alt="App screenshot"
-              src="https://i.imgur.com/VciRSTI.jpeg"
+              // src="/images/chatpdfbackground.png"
+              src={AppScreenshot}
               width={2432}
               height={1442}
               className="mb-[-0%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"

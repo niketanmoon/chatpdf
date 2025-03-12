@@ -43,6 +43,7 @@ function Document({
       <div className="flex space-x-2 justify-end">
         <Button
           variant="outline"
+          className="cursor-pointer"
           disabled={isDeleting || !hasActiveMembership}
           onClick={() => {
             const prompt = window.confirm(

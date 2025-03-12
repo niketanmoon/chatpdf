@@ -114,7 +114,7 @@ function PdfView({ url }: { url: string }) {
           file={file}
           rotate={rotation}
           onLoadSuccess={onDocumentLoadSuccess}
-          className="m-4 overflow-scroll"
+          className="overflow-scroll"
         >
           <Page className="shadow-lg" scale={scale} pageNumber={pageNumber} />
         </Document>
