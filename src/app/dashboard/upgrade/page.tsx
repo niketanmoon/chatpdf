@@ -25,7 +25,7 @@ function PricingPage() {
     if (!user) return;
 
     const userDetails: UserDetails = {
-      email: user.primaryEmailAddress?.toString()!,
+      email: user.primaryEmailAddress?.toString() || "niketanmoon@gmail.com",
       name: user.fullName!,
     };
 

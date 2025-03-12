@@ -27,7 +27,7 @@ function Chat({ id }: { id: string }) {
   const [isPending, startTransition] = useTransition();
   const bottomOfChatRef = useRef<HTMLDivElement>(null);
 
-  const [snapshot, loading, error] = useCollection(
+  const [snapshot, loading] = useCollection(
     user &&
       query(
         collection(db, "users", user?.id, "files", id, "chat"),

@@ -40,7 +40,7 @@ const FileUploader = () => {
         // do nothing toast
       }
     },
-    [handleUpload, isOverFileLimit, filesLoading, toast]
+    [handleUpload, isOverFileLimit, filesLoading]
   );
 
   const statusIcons: {
@@ -79,7 +79,7 @@ const FileUploader = () => {
             }`}
             role="progressbar"
             style={{
-              // @ts-ignore
+              // @ts-expect-error CSS error
               "--value": progress,
               "--size": "12rem",
               "--thickness": "1.3rem",
@@ -90,11 +90,11 @@ const FileUploader = () => {
 
           {/* Render Status Icon */}
           {
-            // @ts-ignore
+            // @ts-expect-error used it for inline style
             statusIcons[status!]
           }
 
-          {/* @ts-ignore */}
+          {/* @ts-expect-error used it for inline style */}
           <p className="text-indigo-600 animate-pulse">{status}</p>
         </div>
       )}
