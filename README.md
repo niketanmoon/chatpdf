@@ -103,3 +103,9 @@
 - Added download icon and delete document functionality
 
 - Listening to stripe on local: `stripe listen --forward-to localhost:3000/webhook`
+
+## Issue when deploying HookWebPackError
+
+- Add .vercelignore file to the root
+- Add !.gitignore in it
+- Its basically a issue with tailwind scanning node modules as source. You can learn more about this issue: https://github.com/vercel/next.js/discussions/76246 and this https://github.com/tailwindlabs/tailwindcss/issues/17092#issuecomment-2711005518
